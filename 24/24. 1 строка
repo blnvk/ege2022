@@ -26,3 +26,17 @@ with open ('k8.txt') as f:
         else:
             k = 1
 print(kmax, c)
+
+
+with open ('24-1.txt') as f:
+    s = f.readline()
+    s1 = ''
+    numbers = []
+    for c in s:
+        if c.isdigit():
+            s1 += c
+        else:
+            if s1 != '':
+                numbers.append(s1)
+            s1 = ''
+print(min([int(i) for i in numbers if int(i) % 2]))
