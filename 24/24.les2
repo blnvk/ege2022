@@ -1,0 +1,10 @@
+with open('24-181.txt') as f:
+    s = f.readline()
+    kmax = 0
+    a = []
+    for i in range(len(s)):
+        if s[i] == '.':
+            a.append(i)
+    for i in range(2, len(a)):
+        kmax = max(kmax, a[i] - a[i - 2] -1)
+print(kmax)
