@@ -1,0 +1,13 @@
+for n in range(1000000, 1500000):
+    d = 1
+    k = 0
+    dmax = 0
+    while d * d <= n:
+        if n % d == 0:
+            if (n // d) - d <= 110:
+                k += 1
+                dmax = max(dmax, n // d)
+            if k == 3:
+                print(n, dmax)
+                break
+        d += 1
