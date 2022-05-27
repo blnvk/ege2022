@@ -1,0 +1,14 @@
+with open('6/27990_B.txt') as f:
+    k = 0
+    n = int(f.readline())
+    k62, k31, k2 = 0, 0, 0
+    for i in range(n):
+        a =  int(f.readline())
+        if a % 62 == 0:
+            k62 += 1
+        elif a % 31 == 0:
+            k31 += 1
+        elif a % 2 == 0:
+            k2 += 1
+    k = k62 * (k62 - 1) // 2 + k62 * (n - k62) + k2 * k31
+print(k)
