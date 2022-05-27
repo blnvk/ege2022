@@ -1,0 +1,17 @@
+with open('27989_A.txt') as f:
+    n = int(f.readline())
+    maxi, max13, max2, max26 = 0, 0, 0, 0
+    for i in range(n):
+        a = int(f.readline())
+        if a % 13 == 0 and a % 2 != 0 and a > max13:
+            max13 = a
+        elif a % 2 == 0 and a % 13 != 0 and a > max2:
+            max2 = a
+        elif a % 26 == 0 and a > max26:
+            max26 = a
+        elif a > maxi:
+            maxi = a
+if max13 * max2 < maxi * max26:
+    print(maxi * max26)
+else:
+    print(max13 * max2)
